@@ -5,7 +5,7 @@ require 'securerandom'
 
 # 読み込んで
 def load_json(json_file_path)
-  json_data = File.open(json_file_path) do |io|
+  File.open(json_file_path) do |io|
     JSON.parse(io)
   end
 end
@@ -22,7 +22,7 @@ def make_memo_hash(title, content)
 end
 
 def get_memos(json_file_path)
-  memos = load_json(json_file_path)['memos']
+  load_json(json_file_path)['memos']
 end
 
 def get_memo_from_id(json_file_path, id)
@@ -31,7 +31,7 @@ def get_memo_from_id(json_file_path, id)
   json_data['memos'].each do |memo|
     memos << memo if memo['id'] == id
   end
-  memo = memos[0]
+  memos[0]
 end
 
 def update_memo_from_id(json_file_path, id, title, content)
