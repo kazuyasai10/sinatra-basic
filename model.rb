@@ -3,10 +3,9 @@
 require 'json'
 require 'securerandom'
 
-# 読み込んで
 def load_json(json_file_path)
-  File.open(json_file_path) do |io|
-    JSON.parse(io)
+  File.open(json_file_path) do |f|
+    hash = JSON.parse(f.read)
   end
 end
 

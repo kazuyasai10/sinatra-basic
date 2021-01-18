@@ -17,6 +17,7 @@ end
 
 get '/memos' do
   @memos_hash = get_memos(json_file_path)
+  p 'test'
   slim :'/memos/index'
 end
 
