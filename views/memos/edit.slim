@@ -1,0 +1,11 @@
+form.form-group action="/memos/#{@memo_hash["id"]}/edit" method="POST" 
+  input name="_method" type="hidden" value="PATCH" /
+  div
+    | タイトル:
+    input.form-control name="memo_title" type="text" value="#{@memo_hash["title"]}" /
+  div
+    | 本文:
+    textarea.form-control name="memo_content" rows="5" 
+      = @memo_hash["content"]
+  div
+    input.form-control type="submit" value="保存" /
