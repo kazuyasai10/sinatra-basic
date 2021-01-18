@@ -8,8 +8,8 @@ jsonファイルにメモのid,title,contentを保存、読み込みができる
 
 ```
 % git clone https://github.com/aocattleya/hoge.git
-% bundle install
+% bundle install --path vendor/bundle
 % bundle exec ruby app.rb
-http://localhost:4567
+=> http://localhost:4567
 ```
 
