@@ -2,6 +2,7 @@ GEM
   remote: https://rubygems.org/
   specs:
     ast (2.4.1)
+    minitest (5.14.3)
     multi_json (1.15.0)
     mustermann (1.1.1)
       ruby2_keywords (~> 0.0.1)
@@ -11,6 +12,8 @@ GEM
     rack (2.2.3)
     rack-protection (2.1.0)
       rack
+    rack-test (1.1.0)
+      rack (>= 1.0, < 3)
     rainbow (3.0.0)
     regexp_parser (2.0.3)
     rexml (3.2.4)
@@ -28,6 +31,8 @@ GEM
     rubocop-fjord (0.1.4)
       rubocop (>= 1.0)
       rubocop-performance
+    rubocop-minitest (0.10.3)
+      rubocop (>= 0.87, < 2.0)
     rubocop-performance (1.9.2)
       rubocop (>= 0.90.0, < 2.0)
       rubocop-ast (>= 0.4.0)
@@ -55,7 +60,10 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  minitest
+  rack-test
   rubocop-fjord
+  rubocop-minitest
   sinatra (~> 2.1)
   sinatra-contrib
   slim
