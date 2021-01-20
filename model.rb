@@ -2,10 +2,13 @@
 
 require 'json'
 require 'securerandom'
+require 'pg'
 
 class Memo
   JSON_FILE_PATH = 'data.json'
-
+CONNECTION = connection = PG::Connection.new(:dbname => 'memo')
+puts 'Successfully created connection to database.'
+p 
   attr_reader :id, :title, :content
 
   def initialize(id: '000', title: 'notitle', content: 'no-content')
@@ -25,7 +28,8 @@ class Memo
 
   def self.all
     memos = []
-    load_json['memos'].each do |memo|
+    memo_table=CONNECTION.exec('SELECT * FROM memo_table;')
+    memo_table.each do |memo|
       memos << Memo.new(id: memo['id'], title: memo['title'], content: memo['content'])
     end
     memos
@@ -69,3 +73,5 @@ class Memo
     end
   end
 end
+
+p Memo.all

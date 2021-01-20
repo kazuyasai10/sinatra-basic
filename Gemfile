@@ -15,3 +15,4 @@ group :development do
   gem 'rubocop-fjord', require: false
   gem 'rubocop-minitest', require: false
 end
+gem 'pg'
