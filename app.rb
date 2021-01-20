@@ -44,7 +44,7 @@ delete '/memos/:id' do
   redirect to('/memos')
 end
 
-patch '/memos/:id/edit' do
+patch '/memos/:id' do
   Memo.update(params[:id],
               title: params[:memo_title],
               content: params[:memo_content])
