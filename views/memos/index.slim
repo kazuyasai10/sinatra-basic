@@ -1,0 +1,7 @@
+h1 メモ一覧
+a.btn.btn-primary href="memos/new"  新しいメモをつくる
+ul.list-group
+  - @memos_hash.each do |memo|
+    li.list-group-item
+      a href="/memos/#{memo["id"]}"
+        | #{memo["title"]}

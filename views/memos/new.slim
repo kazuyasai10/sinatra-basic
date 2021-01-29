@@ -1,0 +1,10 @@
+h1 メモアプリ
+form.form-group action="/memos" method="POST" 
+  div
+    | タイトル:
+    input.form-control name="memo_title" type="text" value=""
+  div
+    | 本文:
+    textarea.form-control name="memo_content" rows="5" 
+  div
+    input.form-control type="submit" value="保存"
